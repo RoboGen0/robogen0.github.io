@@ -43,7 +43,6 @@
 }
 
 
-    /* EOS */
   </style>
 
   <script id="insert"></script>
@@ -97,8 +96,6 @@ function getInput() {
 }
 
 function moveBCode() {
-  //var rX = Math.random() * (maxWidth - 50) + 50;
-  //var rY = Math.random() * (maxHeight - 15) +15;
   let i = Math.abs(Math.floor(Math.random() * window.innerWidth - 167))
   let j = Math.abs(Math.floor(Math.random() * window.innerHeight - 50));
   console.log('here', i, j, b.style.left, b.style.top);
@@ -111,15 +108,12 @@ function moveBCode() {
   //]]></script>
 
   <script>
-    // tell the embed parent frame the height of the content
     if (window.parent && window.parent.parent){
       window.parent.parent.postMessage(["resultsFrame", {
         height: document.body.getBoundingClientRect().height,
         slug: "tj3oy5m7"
       }], "*")
     }
-
-    // always overwrite window.name, in case users try to set it manually
     window.name = "result"
   </script>
 
