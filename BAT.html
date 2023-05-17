@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>B.A.T</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+    #bCode {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: absolute;
+  left: 200px;
+  top: 50px;
+}
+
+.container {
+  width: 98vw;
+  height: 80vh;
+  background-color: white;
+  border: 2px solid black;
+
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+}
+
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+</head>
+<body>
+    <!doctype html>
+
+<head>
+  <title>B.A.T.</title>
+  <link rel="stylesheet" href="barcodeStyles.css">
+  <script src="barcode.js"></script>
+</head>
+
+<body>
+  <div class=container>
+    <img src="https://www.webarcode.com/barcode/image.php?code=Barcode-0&type=C128B&xres=1&height=50&width=167&font=3&output=png&style=197" id="bCode">
+  </div>
+  <div class="info">
+    <input id="bInput" autofocus type="text" onkeydown="keyPress()">
+    <h4 id="score">Score: 0</h4>
+  </div>
+</body>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+var userInput = "";
+var score = 0;
+var b = document.querySelector("#bCode");
+var maxWidth = window.innerWidth - 50;
+var maxHeight = window.innerHeight - 25;
+
+function keyPress() {
+  if (event.keyCode == 13) {
+    getInput();
+
+  }
+}
+
+function getInput() {
+  userInput = document.getElementById("bInput").value;
+  if (userInput == "Barcode-0") {
+    score++;
+    document.getElementById("score").innerText = "Score: " + score;
+    moveBCode();
+  
+  }
+  document.getElementById("bInput").value = "";
+}
+
+function moveBCode() {
+  //var rX = Math.random() * (maxWidth - 50) + 50;
+  //var rY = Math.random() * (maxHeight - 15) +15;
+  let i = Math.abs(Math.floor(Math.random() * window.innerWidth - 167))
+  let j = Math.abs(Math.floor(Math.random() * window.innerHeight - 50));
+  console.log('here', i, j, b.style.left, b.style.top);
+  b.style.left = i + 'px';
+  b.style.top = j + "px";
+}
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "tj3oy5m7"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body>
+</html>
